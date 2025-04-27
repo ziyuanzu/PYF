@@ -1,0 +1,57 @@
+!!!SBtab DocumentName='E. coli central carbon metabolism - balanced parameters' SBtabVersion='1.0'			
+!!SBtab TableID='Configuration' TableType='Config'			
+!Option	!Value	!Comment	
+algorithm	MDF	ECM, or MDF	
+p_h	7		
+ionic_strength	250 mM		
+p_mg	3		
+dg_confidence	0.95	
+			
+!!SBtab TableID='Reaction' TableType='Reaction'			
+!ID	!ReactionFormula		
+TyrB	akg + tyr__L <=> 34hpp + glu__L		
+Abpdc	34hpp --> hpa + co2		
+PAR	hpa + NADPH + h --> tyrl + NADP		
+HpaBC	tyrl + NADH + h + o2 --> htl + NAD + h2o
+			
+!!SBtab TableID='Compound' TableType='Compound'			
+!ID	!Identifiers
+akg	kegg:C00026		
+tyr__L	kegg:C00082		
+34hpp	kegg:C01179		
+glu__L	kegg:C00025		
+hpa	kegg:C03765		
+co2	kegg:C00011		
+NADPH	kegg:C00005		
+h	kegg:C00080		
+tyrl	kegg:C06044		
+NADP	kegg:C00006		
+NADH	kegg:C00004		
+o2	kegg:C00007		
+htl	CHEBI:68889		
+NAD	kegg:C00003		
+h2o	kegg:C00001				
+			
+!!SBtab TableID='Flux' TableType='Quantity' Unit='mM/s'			
+!QuantityType	!Reaction	!Value	
+rate of reaction	TyrB	0.0002	
+rate of reaction	Abpdc	0.0002	
+rate of reaction	PAR	0.0002	
+rate of reaction	HpaBC	0.0002	
+			
+!!SBtab TableID='ConcentrationConstraint' TableType='Quantity' Unit='mM'			
+!QuantityType	!Compound	!Min	!Max
+concentration	akg	0.001	55
+concentration	tyr__L	0.001	55
+concentration	34hpp	0.001	55
+concentration	glu__L	0.001	55
+concentration	hpa	0.001	55
+concentration	co2	0.01	0.01
+concentration	NADPH	0.11389157	0.11389157
+concentration	h	0.001	55
+concentration	tyrl	0.001	55
+concentration	NADP	0.1	0.1
+concentration	NADH	0.02741513	0.02741513
+concentration	o2	0.001	55
+concentration	htl	0.001	55
+concentration	NAD	1	1

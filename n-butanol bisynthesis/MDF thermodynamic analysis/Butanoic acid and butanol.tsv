@@ -1,0 +1,81 @@
+!!!SBtab DocumentName='E. coli central carbon metabolism - balanced parameters' SBtabVersion='1.0'			
+!!SBtab TableID='Configuration' TableType='Config'			
+!Option	!Value	!Comment	
+algorithm	MDF	ECM, or MDF	
+p_h	7		
+ionic_strength	250 mM		
+p_mg	3		
+dg_confidence	0.95	
+			
+!!SBtab TableID='Reaction' TableType='Reaction'			
+!ID	!ReactionFormula
+Pyk	adp + h + pep --> atp + pyr		
+Pdh	coa + NAD + pyr --> accoa + co2 + NADH		
+PhaA	2.0 accoa <=> aacoa + coa		
+Hbd	aacoa + h + NADH <=> 3hbcoa + NAD		
+Crt	3hbcoa <=> b2coa + h2o		
+Ter	b2coa + NADH + h --> btcoa + NAD		
+AtoDA_reverse	btcoa + ac --> but + accoa		
+AtoDA	but + accoa --> btcoa + ac		
+AdhE2_1	h + btcoa + NADPH --> btal + coa + NADP		
+AdhE2_2	btal + NADH + h --> btoh + NAD		
+			
+!!SBtab TableID='Compound' TableType='Compound'			
+!ID	!Identifiers		
+adp	kegg:C00008		
+h	kegg:C00080		
+pep	kegg:C00074		
+atp	kegg:C00002		
+pyr	kegg:C00022		
+coa	kegg:C00010		
+NAD	kegg:C00003		
+accoa	kegg:C00024
+co2	kegg:C00011		
+NADH	kegg:C00004		
+aacoa	kegg:C00332				
+3hbcoa	kegg:C01144		
+b2coa	kegg:C00877		
+btcoa	kegg:C00136		
+h2o	kegg:C00001		
+NADPH	kegg:C00005		
+btal	kegg:C01412		
+NADP	kegg:C00006		
+btoh	kegg:C06142		
+ac	kegg:C00033		
+but	kegg:C00246		
+			
+!!SBtab TableID='Flux' TableType='Quantity' Unit='mM/s'			
+!QuantityType	!Reaction	!Value	
+rate of reaction	Pyk	0.0006	
+rate of reaction	Pdh	0.0006	
+rate of reaction	PhaA	0.0006	
+rate of reaction	Hbd	0.0006	
+rate of reaction	Crt	0.0006	
+rate of reaction	Ter	0.0006	
+rate of reaction	AtoDA_reverse	0.0006	
+rate of reaction	AtoDA	0.0006	
+rate of reaction	AdhE2_1	0.0006	
+rate of reaction	AdhE2_2	0.0006	
+			
+!!SBtab TableID='ConcentrationConstraint' TableType='Quantity' Unit='mM'			
+!QuantityType	!Compound	!Min	!Max
+concentration	adp	0.60461237	0.60461237
+concentration	h	0.001	55
+concentration	pep	0.001	111
+concentration	atp	3.4491395	3.4491395
+concentration	pyr	0.001	111
+concentration	coa	1	1
+concentration	NAD	1	1
+concentration	accoa	0.001	111
+concentration	co2	0.01	0.01
+concentration	NADH	0.02741513	0.02741513
+concentration	aacoa	0.001	55
+concentration	3hbcoa	0.001	55
+concentration	b2coa	0.001	55
+concentration	btcoa	0.001	55
+concentration	NADPH	0.11389157	0.11389157
+concentration	btal	0.001	55
+concentration	NADP	0.1	0.1
+concentration	btoh	0.001	55
+concentration	ac	0.001	111
+concentration	but	0.001	55

@@ -1,0 +1,81 @@
+!!!SBtab DocumentName='E. coli central carbon metabolism - balanced parameters' SBtabVersion='1.0'			
+!!SBtab TableID='Configuration' TableType='Config'			
+!Option	!Value	!Comment	
+algorithm	MDF	ECM, or MDF	
+p_h	7		
+ionic_strength	250 mM		
+p_mg	3		
+dg_confidence	0.95	
+			
+!!SBtab TableID='Reaction' TableType='Reaction'			
+!ID	!ReactionFormula
+Pdh	coa + NAD + pyr --> accoa + co2 + NADH		
+PhaA	2.0 accoa <=> aacoa + coa		
+Hbd	aacoa + h + NADH <=> 3hbcoa + NAD		
+Crt	3hbcoa <=> b2coa + h2o		
+Ter	b2coa + NADH + h --> btcoa + NAD		
+Saat/Cat*	btcoa + ibutoh --> isobt + coa		
+AlsS	h + 2.0 pyr --> alac__S + co2		
+IlvC	alac__S + h + NADPH <=> 23dhmb + NADP		
+IlvD	23dhmb --> 3mob + h2o		
+KivD	3mob + h --> co2 + mppal		
+YqhD	h + NADH + mppal --> NAD + ibutoh		
+			
+!!SBtab TableID='Compound' TableType='Compound'			
+!ID	!Identifiers		
+coa	kegg:C00010		
+NAD	kegg:C00003		
+pyr	kegg:C00022		
+accoa	kegg:C00024		
+co2	kegg:C00011		
+NADH	kegg:C00004		
+aacoa	kegg:C00332		
+h	kegg:C00080		
+3hbcoa	kegg:C01144		
+b2coa	kegg:C00877		
+h2o	kegg:C00001		
+btcoa	kegg:C00136		
+ibutoh	kegg:C14710		
+isobt	CHEBI:87683		
+alac__S	kegg:C06010		
+NADPH	kegg:C00005		
+23dhmb	kegg:C04272		
+NADP	kegg:C00006		
+3mob	kegg:C00141		
+mppal	CHEBI:48943		
+			
+!!SBtab TableID='Flux' TableType='Quantity' Unit='mM/s'			
+!QuantityType	!Reaction	!Value	
+rate of reaction	Pdh	0.000003	
+rate of reaction	PhaA	0.000003	
+rate of reaction	Hbd	0.000003	
+rate of reaction	Crt	0.000003	
+rate of reaction	Ter	0.000003	
+rate of reaction	Saat/Cat*	0.000003	
+rate of reaction	AlsS	0.000003	
+rate of reaction	IlvC	0.000003	
+rate of reaction	IlvD	0.000003	
+rate of reaction	KivD	0.000003	
+rate of reaction	YqhD	0.000003	
+			
+!!SBtab TableID='ConcentrationConstraint' TableType='Quantity' Unit='mM'			
+!QuantityType	!Compound	!Min	!Max
+concentration	coa	1	1
+concentration	NAD	1	1
+concentration	pyr	0.001	139
+concentration	accoa	0.001	139
+concentration	co2	0.01	0.01
+concentration	NADH	0.02741513	0.02741513
+concentration	aacoa	0.001	69
+concentration	h	0.001	69
+concentration	3hbcoa	0.001	69
+concentration	b2coa	0.001	69
+concentration	btcoa	0.001	69
+concentration	ibutoh	0.001	69
+concentration	isobt	0.001	69
+concentration	alac__S	0.001	33
+concentration	NADPH	0.11389157	0.11389157
+concentration	23dhmb	0.001	33
+concentration	NADP	0.1	0.1
+concentration	3mob	0.001	33
+concentration	mppal	0.001	33
